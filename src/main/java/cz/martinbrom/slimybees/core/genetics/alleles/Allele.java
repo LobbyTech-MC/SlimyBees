@@ -20,13 +20,12 @@ public class Allele implements Comparable<Allele> {
     private final boolean dominant;
 
     public Allele(String uid, String name, boolean dominant) {
+    	/*
         Validate.notEmpty(uid, "The allele uid must not be null or empty!");
-        /*
+        
         Validate.isTrue(PatternUtil.UID_PATTERN.matcher(uid).matches(), "The allele uid must start with a prefix " +
                 "and be in the lower snake case format, got " + uid + "!");
-        */
         Validate.notEmpty(name, "The allele name must not be null or empty!");
-        /*
         Validate.isTrue(PatternUtil.UPPER_SNAKE.matcher(name).matches(), "The allele name must be " +
                 "in the upper snake case format, got " + name + "!");
         */
