@@ -30,7 +30,6 @@ public class BiomeSets {
 
     public static final Biome[] DESERTS = {
             Biome.DESERT,
-            Biome.BASALT_DELTAS,
             Biome.BADLANDS,
             Biome.ERODED_BADLANDS,
             Biome.WOODED_BADLANDS
@@ -40,7 +39,7 @@ public class BiomeSets {
             Biome.SNOWY_SLOPES,
             Biome.FROZEN_PEAKS,
             Biome.JAGGED_PEAKS,
-            Biome.STONY_PEAKS
+            Biome.STONY_PEAKS,
     };
 
     public static final Biome[] BODIES_OF_WATER = {

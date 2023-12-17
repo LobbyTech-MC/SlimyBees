@@ -20,7 +20,6 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 // TODO: 16.06.21 Document that this is copied from the AContainer class
@@ -84,7 +83,7 @@ public abstract class AbstractMachine extends AbstractTickingContainer implement
     protected abstract int[] getOutputSlots();
 
     @Override
-    protected void tick(BlockMenu menu, Block b, Config data) {
+    protected void tick(BlockMenu menu, Block b) {
         CustomCraftingOperation currentOperation = processor.getOperation(b);
 
         if (currentOperation != null) {
