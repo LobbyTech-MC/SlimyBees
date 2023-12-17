@@ -57,7 +57,7 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
         open(p, profile, layout, 1);
     }
 
-    protected final void open(Player p, PlayerProfile profile, SlimefunGuideMode mode, int page) {
+	protected final void open(Player p, PlayerProfile profile, SlimefunGuideMode mode, int page) {
         GuideHistory history = profile.getGuideHistory();
         if (mode == SlimefunGuideMode.SURVIVAL_MODE) {
             history.add(this, page);
