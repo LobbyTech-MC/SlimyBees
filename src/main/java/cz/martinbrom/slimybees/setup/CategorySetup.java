@@ -30,7 +30,7 @@ public class CategorySetup {
 
         Categories.ITEMS.register(plugin);
 
-        ItemStack displayItem = new CustomItemStack(SlimyBeesHeadTexture.DRONE.getAsItemStack(), "Bee Atlas");
+        ItemStack displayItem = new CustomItemStack(SlimyBeesHeadTexture.DRONE.getAsItemStack(), "林业蜜蜂");
         factory.createList(displayItem).register(plugin);
     }
 }

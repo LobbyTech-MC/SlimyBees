@@ -113,7 +113,7 @@ public class BeeLoreService {
         if (meta != null) {
             meta.setLore(lore);
 
-            String genericName = meta.getDisplayName().replace("Drone", "Bee").replace("Princess", "Bee");
+            String genericName = meta.getDisplayName().replace("雄蜂", "蜜蜂").replace("雌蜂", "蜜蜂");
             meta.setDisplayName(genericName);
 
             copy.setItemMeta(meta);

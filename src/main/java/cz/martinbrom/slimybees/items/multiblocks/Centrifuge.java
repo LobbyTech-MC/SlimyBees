@@ -110,7 +110,7 @@ public class Centrifuge extends MultiBlockMachine {
 
     @Override
     protected void registerDefaultRecipes(@Nonnull List<ItemStack> recipes) {
-        CustomItemStack anyComb = new CustomItemStack(Material.HONEYCOMB, ChatColor.YELLOW + "Any comb");
+        CustomItemStack anyComb = new CustomItemStack(Material.HONEYCOMB, ChatColor.YELLOW + "蜜脾");
         recipes.add(anyComb);
         recipes.add(ItemStacks.HONEY_DROP);
 
@@ -119,9 +119,9 @@ public class Centrifuge extends MultiBlockMachine {
 
         recipes.add(anyComb);
         recipes.add(new CustomItemStack(Material.DIAMOND,
-                ChatColor.YELLOW + "Bee product",
-                ChatColor.YELLOW + "Consult the Bee Atlas or the addon wiki",
-                ChatColor.YELLOW + "for more information"));
+                ChatColor.YELLOW + "林业蜜蜂",
+                ChatColor.YELLOW + "探索蜜蜂的神秘之旅",
+                ChatColor.YELLOW + "将从这里开始！"));
     }
 
 }

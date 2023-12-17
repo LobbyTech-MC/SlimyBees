@@ -309,6 +309,8 @@ public class SlimyBeesPlugin extends JavaPlugin implements SlimefunAddon {
                     case THE_END:
                         worldPopulators.add(endPopulator);
                         break;
+				default:
+					break;
                 }
             } else {
                 logger.warning("Cannot register a nest populator for world: " + worldName + " because it doesn't exist!");

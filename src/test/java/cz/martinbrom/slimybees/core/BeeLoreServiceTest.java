@@ -86,8 +86,8 @@ public class BeeLoreServiceTest {
 
         assertNotNull(princessMeta);
         assertNotNull(droneMeta);
-        assertEquals("Test Bee", princessMeta.getDisplayName());
-        assertEquals("Test Bee", droneMeta.getDisplayName());
+        assertEquals("Test蜜蜂", princessMeta.getDisplayName());
+        assertEquals("Test蜜蜂", droneMeta.getDisplayName());
 
         assertLore(null, princessMeta);
         assertLore(null, droneMeta);

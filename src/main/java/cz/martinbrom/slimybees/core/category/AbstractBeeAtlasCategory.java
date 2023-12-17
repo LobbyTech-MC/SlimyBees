@@ -57,6 +57,7 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
         open(p, profile, layout, 1);
     }
 
+	@SuppressWarnings("deprecation")
 	protected final void open(Player p, PlayerProfile profile, SlimefunGuideMode mode, int page) {
         GuideHistory history = profile.getGuideHistory();
         if (mode == SlimefunGuideMode.SURVIVAL_MODE) {
@@ -64,12 +65,12 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
         }
 
         String suffix = getTitleSuffix();
-        String title = "Bee Atlas" + (suffix == null ? "" : " - " + suffix);
+        String title = "林业蜜蜂" + (suffix == null ? "" : " - " + suffix);
         ChestMenu menu = createMenu(title);
 
         SurvivalSlimefunGuide guide = (SurvivalSlimefunGuide) Slimefun.getRegistry().getSlimefunGuide(mode);
         menu.setEmptySlotsClickable(false);
-        menu.addMenuOpeningHandler(pl -> pl.playSound(pl.getLocation(), guide.getSound(), 1, 1));
+        //menu.addMenuOpeningHandler(pl -> pl.playSound(pl.getLocation(), guide.getSound(), 1, 1));
         guide.createHeader(p, profile, menu);
 
         // remove the search

@@ -51,7 +51,7 @@ public class BeeAtlasDetailCategory extends AbstractBeeAtlasCategory {
 
     protected static final CustomItemStack OBTAINED_NEST_ITEM = new CustomItemStack(
             Material.BEE_NEST,
-            ChatColor.DARK_GREEN + "在世界中发现");
+            ChatColor.DARK_GREEN + "在生存世界中发现");
 
     private final AlleleSpecies categorySpecies;
 

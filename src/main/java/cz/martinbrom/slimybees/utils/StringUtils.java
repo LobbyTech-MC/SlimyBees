@@ -62,7 +62,59 @@ public class StringUtils {
         }
 
         String[] uidParts = uid.split(":");
-        return uidParts.length == 1 ? "" : uidParts[1].toUpperCase(Locale.ROOT);
+        
+        if (uidParts.length == 1) {
+        	return "";
+        } else {
+        	switch (uidParts[1]) {
+        		case "very_low":
+        			return "非常低";
+        		case "low":
+        			return "低";
+        		case "normal":
+        			return "中等";
+        		case "high":
+        			return "高";
+        		case "very_high":
+        			return "非常高";
+        		case "very_short":
+        			return "非常短";
+        		case "short":
+        			return "短";
+        		case "long":
+        			return "长";
+        		case "very_long":
+        			return "非常长";
+        		case "none":
+        			return "无";
+        		case "oxeye_daisy":
+        			return "滨菊";
+        		case "wheat":
+        			return "小麦";
+        		case "sugar_cane":
+        			return "甘蔗";
+        		case "melon":
+        			return "西瓜";
+        		case "pumpkin":
+        			return "南瓜";
+        		case "potato":
+        			return "马铃薯";
+        		case "carrot":
+        			return "胡萝卜";
+        		case "beetroot":
+        			return "甜菜根";
+        		case "cocoa":
+        			return "可可豆";
+        		case "berry":
+        			return "浆果";
+        		case "regeneration":
+        			return "再生";
+        		case "firework":
+        			return "火焰";
+        		default:
+        			return "";
+        	}
+        }
     }
 
 }

@@ -109,7 +109,7 @@ public class ItemStacks {
     public static final SlimefunItemStack BEE_HIVE = new SlimefunItemStack(
             "BEE_HIVE",
             Material.OAK_PLANKS,
-            "&6基础蜂箱",
+            "&6简易蜂箱",
             "",
             "&f给你的蜜蜂一个简单的家",
             "&f需要手动操作!",
@@ -140,10 +140,10 @@ public class ItemStacks {
 
     @Nonnull
     private static String getTieredHiveString(MachineTier basic) {
-        return basic + " Hive";
+        return basic + "蜂箱";
     }
 
-    public static final String EXTRACTS_MATERIALS_FROM_COMBS = "&fExtracts materials from combs";
+    public static final String EXTRACTS_MATERIALS_FROM_COMBS = "&f从蜜脾中提取原料";
     public static final SlimefunItemStack SBEE_CENTRIFUGE = new SlimefunItemStack(
             "SBEE_CENTRIFUGE",
             Material.GRINDSTONE,

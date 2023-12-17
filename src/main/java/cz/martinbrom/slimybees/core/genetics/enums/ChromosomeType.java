@@ -25,13 +25,13 @@ import cz.martinbrom.slimybees.utils.StringUtils;
 @ParametersAreNonnullByDefault
 public enum ChromosomeType {
 
-    SPECIES(AlleleSpecies.class, SlimyBeesHeadTexture.PRINCESS.getAsItemStack(), false),
-    PRODUCTIVITY(AlleleDouble.class, new ItemStack(Material.HONEYCOMB), true),
-    FERTILITY(AlleleInteger.class, new ItemStack(Material.BEE_SPAWN_EGG), true),
-    LIFESPAN(AlleleInteger.class, new ItemStack(Material.CLOCK), true),
-    RANGE(AlleleInteger.class, new ItemStack(Material.ELYTRA), true),
-    PLANT(AllelePlant.class, new ItemStack(Material.OXEYE_DAISY), false),
-    EFFECT(AlleleEffect.class, new ItemStack(Material.DRAGON_BREATH), false);
+    SPECIES(AlleleSpecies.class, "物种", SlimyBeesHeadTexture.PRINCESS.getAsItemStack(), false),
+    PRODUCTIVITY(AlleleDouble.class, "产量", new ItemStack(Material.HONEYCOMB), true),
+    FERTILITY(AlleleInteger.class, "繁殖能力", new ItemStack(Material.BEE_SPAWN_EGG), true),
+    LIFESPAN(AlleleInteger.class, "寿命", new ItemStack(Material.CLOCK), true),
+    RANGE(AlleleInteger.class, "范围", new ItemStack(Material.ELYTRA), true),
+    PLANT(AllelePlant.class, "需要植物", new ItemStack(Material.OXEYE_DAISY), false),
+    EFFECT(AlleleEffect.class, "效果", new ItemStack(Material.DRAGON_BREATH), false);
 
     public static final int CHROMOSOME_COUNT = values().length;
     private static final Map<String, ChromosomeType> lookupTable = Stream.of(values())
@@ -42,12 +42,12 @@ public enum ChromosomeType {
     private final ItemStack displayItem;
     private final boolean displayAllValues;
 
-    ChromosomeType(Class<? extends Allele> cls, ItemStack displayItem, boolean displayAllValues) {
+    ChromosomeType(Class<? extends Allele> cls, String displayName, ItemStack displayItem, boolean displayAllValues) {
         Validate.notNull(cls, "ChromosomeType allele class cannot be null!");
         Validate.notNull(displayItem, "ChromosomeType display item cannot be null!");
 
         this.cls = cls;
-        displayName = StringUtils.humanizeSnake(name());
+        this.displayName = displayName;
         this.displayItem = displayItem;
         this.displayAllValues = displayAllValues;
     }
