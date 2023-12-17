@@ -6,9 +6,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
-import cz.martinbrom.slimybees.utils.PatternUtil;
 import cz.martinbrom.slimybees.utils.StringUtils;
 
 @ParametersAreNonnullByDefault

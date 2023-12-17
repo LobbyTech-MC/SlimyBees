@@ -67,12 +67,13 @@ public class BeeBuilder {
     }
 
     public BeeBuilder(String uid, ChatColor color, boolean dominant) {
+    	/*
         Validate.notEmpty(uid, "The bee uid must not be null or empty!");
-        /*
+        
         Validate.isTrue(PatternUtil.SPECIES_UID_PATTERN.matcher(uid).matches(), "The bee uid must start with the species prefix " +
                 "and be in the lower snake case format, got " + uid + "!");
-        */
         Validate.notNull(color, "The bee color must not be null!");
+        */
 
         alleleService = SlimyBeesPlugin.getAlleleService();
         alleleRegistry = SlimyBeesPlugin.getAlleleRegistry();

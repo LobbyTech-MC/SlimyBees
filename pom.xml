@@ -156,10 +156,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.StarWishsama</groupId>
+            <groupId>com.github.slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>54c1294732</version>
-            <scope>provided</scope>
+            <version>RC-35</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
