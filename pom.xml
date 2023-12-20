@@ -159,7 +159,7 @@
             <groupId>com.github.slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
             <version>RC-35</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
