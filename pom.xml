@@ -156,9 +156,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.slimefun</groupId>
+            <groupId>com.github.StarWishsama</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-35</version>
+            <version>54c1294732</version>
             <scope>provided</scope>
         </dependency>
 
