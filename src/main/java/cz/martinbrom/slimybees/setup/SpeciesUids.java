@@ -12,6 +12,7 @@ public class SpeciesUids {
     // prevent instantiation
     private SpeciesUids() {}
 
+
     public static final String FOREST = nameToUid(ChromosomeType.SPECIES, "forest");
     public static final String MEADOWS = nameToUid(ChromosomeType.SPECIES, "meadows");
     public static final String STONE = nameToUid(ChromosomeType.SPECIES, "stone");
@@ -42,6 +43,7 @@ public class SpeciesUids {
     public static final String GLOW_BERRY = nameToUid(ChromosomeType.SPECIES, "glow_berry");
 
     public static final String SECRET = nameToUid(ChromosomeType.SPECIES, "secret");
+
     /*
     public static final String FOREST = nameToUid(ChromosomeType.SPECIES, "森林");
     public static final String MEADOWS = nameToUid(ChromosomeType.SPECIES, "草地");
@@ -72,7 +74,7 @@ public class SpeciesUids {
     public static final String BERRY = nameToUid(ChromosomeType.SPECIES, "浆果");
     public static final String GLOW_BERRY = nameToUid(ChromosomeType.SPECIES, "越橘");
 
-    public static final String SECRET = nameToUid(ChromosomeType.SPECIES, "秘密");
+    public static final String SECRET = nameToUid(ChromosomeType.SPECIES, "物种");
     */
 
 }

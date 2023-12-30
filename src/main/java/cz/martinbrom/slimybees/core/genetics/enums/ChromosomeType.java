@@ -20,7 +20,6 @@ import cz.martinbrom.slimybees.core.genetics.alleles.AlleleInteger;
 import cz.martinbrom.slimybees.core.genetics.alleles.AllelePlant;
 import cz.martinbrom.slimybees.core.genetics.alleles.AlleleSpecies;
 import cz.martinbrom.slimybees.utils.SlimyBeesHeadTexture;
-import cz.martinbrom.slimybees.utils.StringUtils;
 
 @ParametersAreNonnullByDefault
 public enum ChromosomeType {

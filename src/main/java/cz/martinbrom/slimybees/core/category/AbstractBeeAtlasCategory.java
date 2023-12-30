@@ -78,7 +78,7 @@ public abstract class AbstractBeeAtlasCategory extends FlexItemGroup {
 
         // custom back button
         ItemStack backButton = new CustomItemStack(ChestMenuUtils.getBackButton(p,
-                "", "&f左击: &7返回上一页", "&fShift左击: &7返回主菜单"));
+                "", "&f左击: &7返回上一页", "&fShift+左击: &7返回主菜单"));
         menu.addItem(1, backButton, (pl, s, i, a) -> {
             if (a.isShiftClicked()) {
                 navigationService.openMainMenu(profile, mode);

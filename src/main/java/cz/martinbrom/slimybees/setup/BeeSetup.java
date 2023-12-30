@@ -181,7 +181,7 @@ public class BeeSetup {
                         .setSecret(false),
         };
 
-        SlimyBeesPlugin.logger().info("Registered " + bees.length + " bee species!");
+        SlimyBeesPlugin.logger().info("成功注册 " + bees.length + " 蜜蜂物种!");
         //noinspection SimplifyStreamApiCallChains
         List<BeeBuilder> nestingBees = Arrays.stream(bees)
                 // important line below, do not remove!!
