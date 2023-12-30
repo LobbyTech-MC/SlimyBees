@@ -33,12 +33,12 @@ public class BeeSetup {
     public static final Consumer<BeeBuilder> HONEY_GROUP = b -> {
         b.addDefaultAlleleValue(ChromosomeType.PRODUCTIVITY, AlleleUids.PRODUCTIVITY_NORMAL);
         b.addDefaultAlleleValue(ChromosomeType.LIFESPAN, AlleleUids.LIFESPAN_LONG);
-        b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_VERY_LONG);
+        b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_VERY_AWAY);
     };
 
     public static final Consumer<BeeBuilder> FARMING_GROUP = b -> {
         b.addDefaultAlleleValue(ChromosomeType.FERTILITY, AlleleUids.FERTILITY_NORMAL);
-        b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_LONG);
+        b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_AWAY);
     };
 
     public static final Consumer<BeeBuilder> MATERIAL_GROUP = b -> {
@@ -53,7 +53,7 @@ public class BeeSetup {
             b.addDefaultAlleleValue(ChromosomeType.FERTILITY, AlleleUids.FERTILITY_LOW);
 
     public static final Consumer<BeeBuilder> END_GROUP = b ->
-            b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_LONG);
+            b.addDefaultAlleleValue(ChromosomeType.RANGE, AlleleUids.RANGE_AWAY);
 
     // prevent instantiation
     private BeeSetup() {}

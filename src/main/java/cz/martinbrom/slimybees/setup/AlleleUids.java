@@ -35,8 +35,8 @@ public class AlleleUids {
     public static final String RANGE_VERY_SHORT = nameToUid(ChromosomeType.RANGE, "very_short");
     public static final String RANGE_SHORT = nameToUid(ChromosomeType.RANGE, "short");
     public static final String RANGE_NORMAL = nameToUid(ChromosomeType.RANGE, "normal");
-    public static final String RANGE_LONG = nameToUid(ChromosomeType.RANGE, "long");
-    public static final String RANGE_VERY_LONG = nameToUid(ChromosomeType.RANGE, "very_long");
+    public static final String RANGE_AWAY = nameToUid(ChromosomeType.RANGE, "away");
+    public static final String RANGE_VERY_AWAY = nameToUid(ChromosomeType.RANGE, "very_away");
 
     public static final String PLANT_NONE = nameToUid(ChromosomeType.PLANT, "none");
     public static final String PLANT_OXEYE_DAISY = nameToUid(ChromosomeType.PLANT, "oxeye_daisy");
@@ -76,8 +76,8 @@ public class AlleleUids {
     public static final String RANGE_VERY_SHORT = nameToUid(ChromosomeType.RANGE, "非常短");
     public static final String RANGE_SHORT = nameToUid(ChromosomeType.RANGE, "短");
     public static final String RANGE_NORMAL = nameToUid(ChromosomeType.RANGE, "中");
-    public static final String RANGE_LONG = nameToUid(ChromosomeType.RANGE, "长");
-    public static final String RANGE_VERY_LONG = nameToUid(ChromosomeType.RANGE, "非常长");
+    public static final String RANGE_AWAY = nameToUid(ChromosomeType.RANGE, "长");
+    public static final String RANGE_VERY_AWAY = nameToUid(ChromosomeType.RANGE, "非常长");
 
     public static final String PLANT_NONE = nameToUid(ChromosomeType.PLANT, "无");
     public static final String PLANT_OXEYE_DAISY = nameToUid(ChromosomeType.PLANT, "牛眼菊");

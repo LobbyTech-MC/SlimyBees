@@ -142,6 +142,12 @@ public class Allele implements Comparable<Allele> {
     		case "VERY_LONG":
     			this.displayName = "非常长";
     			break;
+    		case "AWAY":
+    			this.displayName = "远";
+    			break;
+    		case "VERY_AWAY":
+    			this.displayName = "非常远";
+    			break;
     		case "NONE":
     			this.displayName = "无";
     			break;

@@ -73,8 +73,8 @@ public class AlleleSetup {
         alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(1), AlleleUids.RANGE_VERY_SHORT);
         alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(2, true), AlleleUids.RANGE_SHORT);
         alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(3, true), AlleleUids.RANGE_NORMAL);
-        alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(4), AlleleUids.RANGE_LONG);
-        alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(5), AlleleUids.RANGE_VERY_LONG);
+        alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(4), AlleleUids.RANGE_AWAY);
+        alleleRegistry.register(ChromosomeType.RANGE, new AlleleValue<>(5), AlleleUids.RANGE_VERY_AWAY);
 
         alleleRegistry.register(ChromosomeType.PLANT, new AlleleValue<>(Material.AIR), AlleleUids.PLANT_NONE);
         alleleRegistry.register(ChromosomeType.PLANT, new AlleleValue<>(Material.OXEYE_DAISY, true), AlleleUids.PLANT_OXEYE_DAISY);
