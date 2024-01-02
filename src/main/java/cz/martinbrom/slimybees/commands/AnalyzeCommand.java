@@ -53,11 +53,11 @@ public class AnalyzeCommand extends AbstractCommand {
         }
 
         if (analyzedCount > 0) {
-            sender.sendMessage(ChatColor.GREEN + "Successfully analyzed "
+            sender.sendMessage(ChatColor.GREEN + "成功分析蜜蜂 "
                     + ChatColor.BOLD + analyzedCount
-                    + ChatColor.RESET + ChatColor.GREEN + " bee" + (analyzedCount > 1 ? "s" : "") + "!");
+                    + ChatColor.RESET + ChatColor.GREEN + " 耗时" + (analyzedCount > 1 ? "s" : "") + "!");
         } else {
-            sender.sendMessage(ChatColor.DARK_GRAY + "Did not find any bees to analyze!");
+            sender.sendMessage(ChatColor.DARK_GRAY + "找不到可分析蜜蜂!");
         }
     }
 
