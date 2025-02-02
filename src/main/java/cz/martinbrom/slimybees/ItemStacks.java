@@ -32,7 +32,7 @@ public class ItemStacks {
     public static final SlimefunItemStack HONEY_DROP = new SlimefunItemStack(
             "HONEY_DROP",
             Material.GOLD_NUGGET,
-            "&6由蜜蜂掉落");
+            "&6蜂遗");
 
     public static final SlimefunItemStack HONEY_COMB = createHoneycomb("HONEY", "&6蜂蜜");
     public static final SlimefunItemStack DRY_COMB = createHoneycomb("DRY", "&e干");
@@ -143,7 +143,7 @@ public class ItemStacks {
         return basic + "蜂箱";
     }
 
-    public static final String EXTRACTS_MATERIALS_FROM_COMBS = "&f从蜜脾中提取原料";
+    public static final String EXTRACTS_MATERIALS_FROM_COMBS = "&f从蜂蜜中提取原料";
     public static final SlimefunItemStack SBEE_CENTRIFUGE = new SlimefunItemStack(
             "SBEE_CENTRIFUGE",
             Material.GRINDSTONE,
