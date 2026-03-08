@@ -2,9 +2,8 @@ package cz.martinbrom.slimybees.core.machine;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
 import io.github.thebusybiscuit.slimefun4.core.machines.MachineOperation;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class WaitingOperation implements MachineOperation {

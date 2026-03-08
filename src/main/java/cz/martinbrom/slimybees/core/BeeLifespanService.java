@@ -2,10 +2,9 @@ package cz.martinbrom.slimybees.core;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
 import cz.martinbrom.slimybees.core.genetics.BreedingModifierDTO;
 import cz.martinbrom.slimybees.core.genetics.Genome;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 
 @ParametersAreNonnullByDefault

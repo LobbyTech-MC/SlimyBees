@@ -7,7 +7,6 @@ import java.util.function.Consumer;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -34,6 +33,7 @@ import cz.martinbrom.slimybees.utils.StringUtils;
 import cz.martinbrom.slimybees.utils.types.Triple;
 import cz.martinbrom.slimybees.worldgen.NestDTO;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 /**
  * This class is used to easily register bee species with everything related to it.

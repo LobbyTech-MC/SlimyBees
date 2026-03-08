@@ -4,12 +4,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
 import cz.martinbrom.slimybees.core.BeeRegistry;
 import cz.martinbrom.slimybees.core.genetics.alleles.Allele;
 import cz.martinbrom.slimybees.core.genetics.alleles.AlleleRegistry;
 import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class ChromosomeParser {

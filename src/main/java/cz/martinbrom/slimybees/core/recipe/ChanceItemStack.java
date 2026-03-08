@@ -4,8 +4,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class ChanceItemStack {

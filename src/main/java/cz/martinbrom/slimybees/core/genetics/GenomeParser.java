@@ -1,16 +1,15 @@
 package cz.martinbrom.slimybees.core.genetics;
 
+import static cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType.CHROMOSOME_COUNT;
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
 import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
-
-import static cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType.CHROMOSOME_COUNT;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class GenomeParser {

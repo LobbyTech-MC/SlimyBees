@@ -1,8 +1,8 @@
 package cz.martinbrom.slimybees.setup;
 
-import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
-
 import static cz.martinbrom.slimybees.utils.StringUtils.nameToUid;
+
+import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
 
 /**
  * This class holds a uid for every base species in SlimyBees.

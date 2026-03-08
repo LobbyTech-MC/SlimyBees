@@ -6,12 +6,12 @@ import java.util.function.Consumer;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
 import cz.martinbrom.slimybees.core.genetics.BreedingResultDTO;
 import io.github.thebusybiscuit.slimefun4.core.machines.MachineOperation;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class BeeBreedingOperation implements MachineOperation {

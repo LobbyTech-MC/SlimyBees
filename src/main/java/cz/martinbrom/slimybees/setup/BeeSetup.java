@@ -1,5 +1,9 @@
 package cz.martinbrom.slimybees.setup;
 
+import static org.bukkit.World.Environment.NETHER;
+import static org.bukkit.World.Environment.NORMAL;
+import static org.bukkit.World.Environment.THE_END;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -17,10 +21,6 @@ import cz.martinbrom.slimybees.SlimyBeesPlugin;
 import cz.martinbrom.slimybees.core.BeeBuilder;
 import cz.martinbrom.slimybees.core.BeeMutationDTO;
 import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
-
-import static org.bukkit.World.Environment.NETHER;
-import static org.bukkit.World.Environment.NORMAL;
-import static org.bukkit.World.Environment.THE_END;
 
 @ParametersAreNonnullByDefault
 public class BeeSetup {

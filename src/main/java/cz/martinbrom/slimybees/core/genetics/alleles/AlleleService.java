@@ -2,9 +2,8 @@ package cz.martinbrom.slimybees.core.genetics.alleles;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
-
 import cz.martinbrom.slimybees.core.genetics.enums.ChromosomeType;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class AlleleService {

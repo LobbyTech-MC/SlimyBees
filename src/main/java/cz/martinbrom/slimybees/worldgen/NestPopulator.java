@@ -6,19 +6,28 @@ import java.util.Random;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.HeightMap;
-import org.bukkit.Material;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.generator.BlockPopulator;
+import org.jetbrains.annotations.NotNull;
+
+import com.sk89q.worldedit.EditSession;
+import com.sk89q.worldedit.WorldEdit;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.world.block.BlockTypes;
+import com.xzavier0722.mc.plugin.slimefun4.storage.controller.BlockDataController;
 
 import cz.martinbrom.slimybees.SlimyBeesPlugin;
 import cz.martinbrom.slimybees.core.SlimyBeesRegistry;
 import cz.martinbrom.slimybees.utils.ArrayUtils;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 @ParametersAreNonnullByDefault
 public class NestPopulator extends BlockPopulator {
@@ -42,18 +51,33 @@ public class NestPopulator extends BlockPopulator {
      */
     @Override
     public void populate(World world, Random random, Chunk source) {
-        Block cornerBlock = world.getHighestBlockAt(source.getX() * 16, source.getZ() * 16);
-        Biome chunkBiome = cornerBlock.getBiome();
+    	Bukkit.getScheduler().runTaskAsynchronously(SlimyBeesPlugin.instance(), () -> {
+    		Block cornerBlock = world.getHighestBlockAt(source.getX() * 16, source.getZ() * 16);
+            Biome chunkBiome = cornerBlock.getBiome();
 
-        List<NestDTO> nests = registry.getNestsForBiome(world, chunkBiome);
-        Collections.shuffle(nests, random);
+            List<NestDTO> nests = registry.getNestsForBiome(world, chunkBiome);
+            Collections.shuffle(nests, random);
 
-        for (NestDTO nest : nests) {
-            double spawnChance = nest.getSpawnChance() * chanceModifier;
-            if (random.nextDouble() < spawnChance && tryGenerate(world, random, source, nest)) {
-                return;
+            com.sk89q.worldedit.world.World faweworld = BukkitAdapter.adapt(world);
+            try (EditSession editSession = WorldEdit.getInstance().newEditSessionBuilder()
+        			.world(faweworld)
+                    .maxBlocks(-1)
+                    .fastMode(true)
+                    .build()) {
+            	
+            	for (NestDTO nest : nests) {
+                    double spawnChance = nest.getSpawnChance() * chanceModifier;
+                    if (random.nextDouble() < spawnChance && tryGenerate(editSession, world, random, source, nest)) {
+                        break;
+                    }
+                }
+            	editSession.flushQueue();
+            } catch (Exception e) {
+                throw new RuntimeException("批量设置蜂箱失败", e);
             }
-        }
+            
+    	});
+        
     }
 
     /**
@@ -72,7 +96,7 @@ public class NestPopulator extends BlockPopulator {
      * @param nest The {@link NestDTO} containing information about the nest
      * @return True if a nest was generated, false otherwise
      */
-    private boolean tryGenerate(World world, Random random, Chunk source, NestDTO nest) {
+    private boolean tryGenerate(EditSession editSession, World world, Random random, Chunk source, NestDTO nest) {
         int cornerX = source.getX() * 16;
         int cornerZ = source.getZ() * 16;
         for (int i = 0; i < TRIES_PER_CHUNK; i++) {
@@ -83,14 +107,14 @@ public class NestPopulator extends BlockPopulator {
             Block nestBlock = groundBlock.getRelative(BlockFace.UP);
 
             if (ArrayUtils.contains(nest.getFloorMaterials(), groundBlock.getType()) && nestBlock.getType().isAir()) {
-                createNest(nestBlock, nest);
+                createNest(editSession, nestBlock, nest);
 
                 // TODO: 16.05.21 Change back to fine or similar logging level
-                SlimyBeesPlugin.logger().info("Successfully generated a Ground Nest "
-                        + "of type: " + nest.getNestId()
-                        + " at [x=" + x
+                SlimyBeesPlugin.logger().info("成功生成了一个蜂箱, "
+                        + "蜂箱类型: " + nest.getNestId()
+                        + "位置: [x=" + x
                         + ", y=" + nestBlock.getY()
-                        + ", z=" + z);
+                        + ", z=" + z + "]");
 
                 return true;
             }
@@ -106,9 +130,19 @@ public class NestPopulator extends BlockPopulator {
      * @param b The {@link Block} where the nest should be generated
      * @param nest The {@link NestDTO} containing information about the nest
      */
-    public static void createNest(Block b, NestDTO nest) {
-        b.setType(Material.BEEHIVE);
-        BlockStorage.store(b, nest.getNestId());
+    public static void createNest(EditSession editSession, Block b, NestDTO nest) {
+    	BlockVector3 pos = BlockVector3.at(b.getX(), b.getY(), b.getZ());
+    	editSession.setBlock(pos, BlockTypes.BEEHIVE.getDefaultState());
+        //b.setType(Material.BEEHIVE);
+    	BlockDataController controller = Slimefun.getDatabaseManager().getBlockDataController();
+		Location location = b.getLocation();
+    	synchronized (controller) { // 简单粗暴的同步锁，确保同一时间只有一个线程在操作 SF 数据库
+    	    if (controller.getBlockData(location) != null) {
+    	        controller.removeBlock(location);
+    	    }
+    	    controller.createBlock(location, nest.getNestId());
+    	}
+    	
     }
 
 }

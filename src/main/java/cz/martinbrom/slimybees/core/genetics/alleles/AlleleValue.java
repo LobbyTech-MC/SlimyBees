@@ -3,7 +3,7 @@ package cz.martinbrom.slimybees.core.genetics.alleles;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
 @ParametersAreNonnullByDefault
 public class AlleleValue<T> {
