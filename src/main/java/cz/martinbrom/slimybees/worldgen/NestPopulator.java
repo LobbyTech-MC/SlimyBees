@@ -136,13 +136,10 @@ public class NestPopulator extends BlockPopulator {
         //b.setType(Material.BEEHIVE);
     	BlockDataController controller = Slimefun.getDatabaseManager().getBlockDataController();
 		Location location = b.getLocation();
-    	synchronized (controller) { // 简单粗暴的同步锁，确保同一时间只有一个线程在操作 SF 数据库
-    	    if (controller.getBlockData(location) != null) {
-    	        controller.removeBlock(location);
-    	    }
+    	if (controller.getBlockData(location) == null) {
     	    controller.createBlock(location, nest.getNestId());
     	}
-    	
+    	        	
     }
 
 }
