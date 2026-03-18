@@ -15,7 +15,6 @@ import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.generator.BlockPopulator;
-import org.jetbrains.annotations.NotNull;
 
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.WorldEdit;
@@ -58,11 +57,12 @@ public class NestPopulator extends BlockPopulator {
             List<NestDTO> nests = registry.getNestsForBiome(world, chunkBiome);
             Collections.shuffle(nests, random);
 
-            com.sk89q.worldedit.world.World faweworld = BukkitAdapter.adapt(world);
             try (EditSession editSession = WorldEdit.getInstance().newEditSessionBuilder()
-        			.world(faweworld)
-                    .maxBlocks(-1)
-                    .fastMode(true)
+            		.world(BukkitAdapter.adapt(world))
+                    .allowedRegionsEverywhere() // 允许任何区域
+                    .limitUnlimited() // 解除限制
+                    .changeSetNull() // 不记录变化
+                    .fastMode(true) // 禁用快速模式（true = 无物理/粒子，false = 有物理/粒子）
                     .build()) {
             	
             	for (NestDTO nest : nests) {
